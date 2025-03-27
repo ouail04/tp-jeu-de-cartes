@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 //-----------------------------------------------------------------------------
-/*
+
 void DeckTest_isEmpty (void) {
   Deck d; Deck_initEmpty (& d);
   assert (Deck_isEmpty (& d));
@@ -61,7 +61,7 @@ void DeckTest_popCard (void) {
 }
 
 //-----------------------------------------------------------------------------
-
+/*
 void DeckTest_initEmpty (void) {
   Deck d; Deck_initEmpty (& d);
   assert (d.length == 0);
@@ -93,7 +93,7 @@ void DeckTest_initFromPips (void) {
 }
 
 //-----------------------------------------------------------------------------
-
+*/
 void DeckTest_pipsEqual (void) {
   Deck d; Deck_initFromPips (& d, "2c 3d 4h");
  
@@ -141,7 +141,7 @@ void DeckTest_swapCardsAt (void) {
   Deck_swapCardsAt (& d, 1, 3);
   assert (Deck_pipsEqual (& d, "2c 5s 4h 3d"));
 }
-
+/*
 //-----------------------------------------------------------------------------
 
 void DeckTest_sortBySuitFirst (void) {
@@ -187,7 +187,7 @@ void DeckTest_isSortedByRankWithNoKind (void) {
 }
 
 //-----------------------------------------------------------------------------
-
+*/
 
 void DeckTest_printPips (void) {
   char * string; size_t length;
@@ -201,7 +201,7 @@ void DeckTest_printPips (void) {
 
 
 //-----------------------------------------------------------------------------
-
+/*
 void DeckTest_dealCardsTo (void) {
   Deck d1; Deck_initFromPips (& d1, "2c 3d 4h 5s");
   Deck d2; Deck_initFromPips (& d2, "Ah");
@@ -312,27 +312,49 @@ void DeckTest_keepOnlyOneCardPerEqual (void) {
   Deck_keepOnlyOneCardPerEqual (& d);
   assert (Deck_pipsEqual (& d, "Qs Qh Td"));
 }
+*/
 
+
+void DeckTest_shuffle(void){
+  Deck d1; 
+  Deck_initComplete(&d1);
+  Deck_printPips(&d1, stdout);
+  Deck_shuffle(&d1);
+  printf("\n");
+  Deck_printPips(&d1, stdout);
+  printf("\n");
+}
 void DeckTest_runAll (void) {
+
+
+
+  
   DeckTest_isFull();
   DeckTest_isEmpty();
   DeckTest_appendCard();
   DeckTest_popCard();
+  DeckTest_indexIsValid();
+  DeckTest_printPips();
+  DeckTest_pipsEqual();
+  DeckTest_rangeIsValid();
+  DeckTest_swapCardsAt();
+  DeckTest_shuffle();
+  /*
   DeckTest_initEmpty();
   DeckTest_initComplete();
   DeckTest_appendPips();
   DeckTest_initFromPips();
-  DeckTest_pipsEqual();
-  DeckTest_indexIsValid();
-  DeckTest_rangeIsValid();
-  DeckTest_swapCardsAt();
+  
+  
+  
+  
   DeckTest_sortBySuitFirst();
   DeckTest_sortByRankFirst();
   DeckTest_isSortedByRankFirst();
   DeckTest_isSortedBySuitFirst();
   DeckTest_isSortedBySuitFirstWithNoEqual();
   DeckTest_isSortedByRankWithNoKind();
-  DeckTest_printPips();
+  
   DeckTest_dealCardsTo();
   DeckTest_lengthOfKindAt ();
   DeckTest_lengthOfFlushAt(); 
@@ -347,5 +369,9 @@ void DeckTest_runAll (void) {
   DeckTest_copyRangeAt();
   DeckTest_keepOnlyOneCardPerKind();
   DeckTest_keepOnlyOneCardPerEqual();
+   */
+
+
+   printf("Deck tests run successfully.\n");
 }
-  */
+ 
