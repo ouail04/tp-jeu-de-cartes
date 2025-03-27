@@ -1,0 +1,6 @@
+Card.o: Card.c
+CardTest.o: CardTest.c CardTest.h Card.h
+DeckTest.o: DeckTest.c DeckTest.h Deck.h Card.h
+HandTest.o: HandTest.c HandTest.h Hand.h Deck.h Card.h
+Main.o: Main.c Hand.h Deck.h Card.h CardTest.h DeckTest.h HandTest.h
+card.o: card.c Card.h
