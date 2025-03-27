@@ -17,15 +17,17 @@ long wikiHits [HAND_COUNT]= {
   6461620L, 6180020L, 4047644L,
   3473184L,  224848L, 4324L + 37260L
 };
-
+static int Random_intBetween(int left, int right){
+  return rand() % (right + 1 - left);
+}
 //-----------------------------------------------------------------------------
 
 int main (void) { 
   CardTest_runAll();
-  //DeckTest_runAll();
+  DeckTest_runAll();
   //HandTest_runAll();
-  /*
-  srand(time(NULL));  
+  
+  srand(time(NULL)); /* 
   int hits[HAND_COUNT]= { 0 };
   int deal_count= 900000;
   
